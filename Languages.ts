@@ -55,7 +55,7 @@ export interface LanguageEntry {
 export const Languages: { [key in Language]: LanguageEntry } = {
   en: {
     display: "English (Simplified)",
-    emoji: "🇺🇸",
+    emoji: "\u{1F1FA}\u{1F1F8}",
     i18n: "en",
     dayjs: "en",
   },
