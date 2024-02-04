@@ -64,19 +64,19 @@ export const Languages: { [key in Language]: LanguageEntry } = {
   fr: {
     display: "French",
     emoji: "🇫🇷",
-    i18n: "🇫🇷",
-    dayjs: "🇫🇷",
+    i18n: "fr",
+    dayjs: "fr",
   },
   de: {
     display: "German",
     emoji: "🇩🇪",
-    i18n: "🇩🇪",
-    dayjs: "🇩🇪",
+    i18n: "de",
+    dayjs: "de",
   },
   hu: {
     display: "Hungarian",
     emoji: "🇭🇺",
-    i18n: "🇭🇺",
-    dayjs: "🇭🇺",
+    i18n: "hu",
+    dayjs: "hu",
   }
 };
