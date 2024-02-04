@@ -5,7 +5,8 @@ export enum Language {
   // Foreign Languages
   FRENCH = "fr",
   GERMAN = "de",
-  HUNGARIAN = "hu"
+  HUNGARIAN = "hu",
+  THAI = "th"
 }
 
 export interface LanguageEntry {
@@ -78,5 +79,11 @@ export const Languages: { [key in Language]: LanguageEntry } = {
     emoji: "🇭🇺",
     i18n: "hu",
     dayjs: "hu",
+  },
+   th: {
+    display: "Thai",
+    emoji: "🇹🇭",
+    i18n: "th",
+    dayjs: "th",
   }
 };
