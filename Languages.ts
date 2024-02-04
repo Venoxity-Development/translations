@@ -61,7 +61,6 @@ export const Languages: { [key in Language]: LanguageEntry } = {
   },
 
   // Foreign Languages
-
   fr: {
     display: "French",
     emoji: "🇫🇷",
