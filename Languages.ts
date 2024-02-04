@@ -61,4 +61,23 @@ export const Languages: { [key in Language]: LanguageEntry } = {
   },
 
   // Foreign Languages
+
+  fr: {
+    display: "French",
+    emoji: "🇫🇷",
+    i18n: "🇫🇷",
+    dayjs: "🇫🇷",
+  },
+  de: {
+    display: "German",
+    emoji: "🇩🇪",
+    i18n: "🇩🇪",
+    dayjs: "🇩🇪",
+  },
+  hu: {
+    display: "Hungarian",
+    emoji: "🇭🇺",
+    i18n: "🇭🇺",
+    dayjs: "🇭🇺",
+  }
 };
