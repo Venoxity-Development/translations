@@ -1,9 +1,9 @@
 {
-  "footer.links": "Quick Links",
-  "footer.help": "Need Help?",
-  "footer.legal": "Legal Information",
-  "footer.documentation": "Documentation",
-  "footer.support": "Support",
-  "footer.privacy": "Privacy Policy",
-  "footer.terms": "Terms Of Use"
+  "footer.links": "ลิ้งค์",
+  "footer.help": "ต้องการความช่วยเหลือ?",
+  "footer.legal": "ข้อมูลทางกฎหมาย",
+  "footer.documentation": "เอกสารกำกับ",
+  "footer.support": "ช่วยเหลือ",
+  "footer.privacy": "นโยบายความเป็นส่วนตัว",
+  "footer.terms": "เงื่อนไขการใช้งาน"
 }
