@@ -1,19 +1,19 @@
 {
   "common": {
     "text": {
-      "home": "Home",
-      "about": "About Us",
-      "news": "News",
-      "contact": "Contact",
-      "back": "Back",
-      "copyright": "© Copyright 2024 Venoxity. All rights reserved.",
-      "privacy": "Privacy Policy",
-      "terms": "Terms Of Use",
-      "documentation": "Documentation",
-      "support": "Support",
-      "workInProgress": "Work in progress",
-      "goToMainPage": "Go to main page",
-      "pageNotFound": "Page not found"
+      "home": "Kezdőlap",
+      "about": "Rólunk",
+      "news": "Újdonságok",
+      "contact": "Elérhetőség",
+      "back": "Vissza",
+      "copyright": "© Copyright 2024 Venoxity. Minden jog fenntartva.",
+      "privacy": "Adatvédelmi Irányelveket",
+      "terms": "Felhasználási feltételek",
+      "documentation": "Dokumentáció",
+      "support": "Ügyfélszolgálat",
+      "workInProgress": "Fejlesztés alatt",
+      "goToMainPage": "Ugrás a kezdőlapra",
+      "pageNotFound": "Az oldal nem található"
     }
   }
 }
