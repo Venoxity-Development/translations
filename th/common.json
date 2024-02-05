@@ -1,19 +1,19 @@
 {
   "common": {
     "text": {
-      "home": "Home",
-      "about": "About Us",
-      "news": "News",
-      "contact": "Contact",
-      "back": "Back",
-      "copyright": "© Copyright 2024 Venoxity. All rights reserved.",
-      "privacy": "Privacy Policy",
-      "terms": "Terms Of Use",
-      "documentation": "Documentation",
-      "support": "Support",
-      "workInProgress": "Work in progress",
-      "goToMainPage": "Go to main page",
-      "pageNotFound": "Page not found"
+      "home": "หน้าแรก",
+      "about": "เกี่ยวกับเรา",
+      "news": "ข่าวสาร",
+      "contact": "ช่องทางการติดต่อ",
+      "back": "กลับ",
+      "copyright": "© ลิขสิทธิ์ 2024 Venoxity. สงวนลิขสิทธิ์.",
+      "privacy": "นโยบายความเป็นส่วนตัว",
+      "terms": "เงื่อนไขการใช้งาน",
+      "documentation": "เอกสารกำกับ",
+      "support": "ช่วยเหลือ",
+      "workInProgress": "กำลังพัฒนา",
+      "goToMainPage": "ไปที่หน้าหลัก",
+      "pageNotFound": "ไม่พบหน้านี้"
     }
   }
 }
