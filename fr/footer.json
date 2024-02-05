@@ -1,9 +1,9 @@
 {
-  "footer.links": "Quick Links",
-  "footer.help": "Need Help?",
-  "footer.legal": "Legal Information",
+  "footer.links": "Raccourcis",
+  "footer.help": "Besoin d'aide ?",
+  "footer.legal": "Mentions légales",
   "footer.documentation": "Documentation",
-  "footer.support": "Support",
-  "footer.privacy": "Privacy Policy",
-  "footer.terms": "Terms Of Use"
+  "footer.support": "Assistance",
+  "footer.privacy": "Politique de confidentialité",
+  "footer.terms": "Conditions d'utilisation"
 }
