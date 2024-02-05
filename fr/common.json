@@ -1,19 +1,19 @@
 {
   "common": {
     "text": {
-      "home": "Home",
-      "about": "About Us",
-      "news": "News",
+      "home": "Accueil",
+      "about": "Qui sommes-nous",
+      "news": "Actualités",
       "contact": "Contact",
-      "back": "Back",
-      "copyright": "© Copyright 2024 Venoxity. All rights reserved.",
-      "privacy": "Privacy Policy",
-      "terms": "Terms Of Use",
+      "back": "Retour",
+      "copyright": "© Copyright 2024 Venoxity. Tous droits réservés.",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
       "documentation": "Documentation",
-      "support": "Support",
-      "workInProgress": "Work in progress",
-      "goToMainPage": "Go to main page",
-      "pageNotFound": "Page not found"
+      "support": "Assistance",
+      "workInProgress": "En cours de développement",
+      "goToMainPage": "Aller à la page principale",
+      "pageNotFound": "Page introuvable"
     }
   }
 }
