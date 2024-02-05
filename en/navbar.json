@@ -1,8 +1,4 @@
 {
-  "navbar.home": "Home",
-  "navbar.about": "About Us",
-  "navbar.news": "News",
-  "navbar.contact": "Contact",
   "navbar.faq": "FAQ",
   "navbar.btnLogin": "Login",
   "navbar.btnServers": "Servers",
