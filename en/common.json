@@ -1,4 +1,12 @@
 {
-    "common.text.back": "Back",
-    "common.text.copyrignt": "© Copyright 2024 Venoxity. All rights reserved."
+  "common": {
+    "text": {
+      "home": "Home",
+      "about": "About Us",
+      "news": "News",
+      "contact": "Contact",
+      "back": "Back",
+      "copyright": "© Copyright 2024 Venoxity. All rights reserved."
+    }
+  }
 }
