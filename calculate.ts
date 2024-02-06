@@ -89,6 +89,10 @@ async function main() {
       if (translationProgress === 100) {
         if (approvalProgress === 100) {
           fileData.verified.push(mappedLanguageId);
+          const entry = Languages[mappedLanguageId as keyof typeof Languages];
+          if (entry) {
+            entry.verified = true;
+        }    
         } else if (approvalProgress < 100) {
           fileData.incomplete.push(mappedLanguageId);
         }
