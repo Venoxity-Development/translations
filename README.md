@@ -8,4 +8,11 @@ The following table shows a list of languages.
 
 Please note that this table **only includes languages that are currently available in the app**.
 
-{{TABLE}}
+|   | Language | Maintainers | Contributors |
+|:-:|---|---|---|
+| 🇺🇸 | English | ... | ... |
+| 🇩🇪 | German | ... | ... |
+| 🇫🇷 | French | ... | ... |
+| 🇭🇺 | Hungarian | ... | ... |
+| 🇹🇭 | Thai | ... | ... |
+
