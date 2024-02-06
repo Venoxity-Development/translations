@@ -26,7 +26,7 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
         with:
-          add: "*.md *.js"
+          add: "*.md *.js *.ts"
           author_name: Venoxity Official Bot
           author_email: contact@venoxity.dev
           committer_name: Venoxity Official Bot
