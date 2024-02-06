@@ -1,4 +1,4 @@
-// deno run --allow-read --allow-write calculate.ts
+// deno run --allow-read --allow-write --allow-env --allow-net calculate.ts
 
 async function fetchProgress(): Promise<any> {
   const projectId = "645542";
