@@ -88,6 +88,12 @@ async function main() {
             "export default " +
               JSON.stringify(mappedLanguageId, undefined, "\t")
           );
+        } else if (approvalProgress < 100) {
+          await Deno.writeTextFile(
+            "incomplete.js",
+            "export default " +
+              JSON.stringify(mappedLanguageId, undefined, "\t")
+          );
         }
       } else if (translationProgress < 100) {
         await Deno.writeTextFile(
