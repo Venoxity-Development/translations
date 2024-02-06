@@ -24,13 +24,11 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
 
       - name: Commit changes
-        run: |
-          git config --global user.avatar "https://i.imgur.com/StEtjMg.png"
-          git config --global user.email "contact@venoxity.dev"
-          git config --global user.name "Venoxity Development"
         uses: EndBug/add-and-commit@v4
         with:
-          add: "*.md"
+          add: '["*md", "*js"]'
+          committer_name: Venoxity Development
+          committer_email: contact@venoxity.dev
           message: "chore: re-generate README"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
