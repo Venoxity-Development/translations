@@ -4,18 +4,13 @@ async function fetchProgress(): Promise<any> {
   const projectId = "645542";
   const apiKey = Deno.env.get("API_KEY");
 
-  if (!apiKey) {
-    console.error("API_KEY environment variable is not set.");
-    return [];
-  }
-
   const url = `https://api.crowdin.com/api/v2/projects/${projectId}/languages/progress`;
 
   try {
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${process.env.API_KEY}`,
+        Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
     });
