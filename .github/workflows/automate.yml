@@ -18,7 +18,7 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: Update README
+      - name: Update README, and related files
         run: deno run --allow-read --allow-write --allow-env --allow-net calculate.ts
         env:
           API_KEY: ${{ secrets.API_KEY }}
@@ -27,8 +27,10 @@ jobs:
         uses: EndBug/add-and-commit@v4
         with:
           add: "*.md *.js"
+          author_name: Venoxity Official Bot
+          author_email: contact@venoxity.dev
           committer_name: Venoxity Official Bot
           committer_email: contact@venoxity.dev
-          message: "chore: re-generate README"
+          message: "chore: re-generate README and related files"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
