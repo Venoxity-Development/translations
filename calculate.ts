@@ -61,7 +61,6 @@ async function main() {
 
   const progressData = await fetchProgress();
   if (progressData.length === 0) {
-    console.log("No progress data available.");
     return;
   }
 
@@ -79,6 +78,24 @@ async function main() {
 
     if (Languages[mappedLanguageId]) {
       const languageData = Languages[mappedLanguageId];
+      const translationProgress = item.data.translationProgress;
+      const approvalProgress = item.data.approvalProgress;
+
+      if (translationProgress === 100) {
+        if (approvalProgress === 100) {
+          await Deno.writeTextFile(
+            "verified.js",
+            "export default " +
+              JSON.stringify(mappedLanguageId, undefined, "\t")
+          );
+        }
+      } else if (translationProgress < 100) {
+        await Deno.writeTextFile(
+          "incomplete.js",
+          "export default " + JSON.stringify(mappedLanguageId, undefined, "\t")
+        );
+      }
+
       table += `| ${languageData.emoji} | ${languageData.display} | ${item.data.translationProgress}% | ${item.data.approvalProgress}% |\n`;
     }
   }
