@@ -1,1 +1,6 @@
-export default "pt"
+export default [
+	"de",
+	"fr",
+	"hu",
+	"pt"
+]
