@@ -68,6 +68,11 @@ async function main() {
 |:-:|---|---|---|
 `;
 
+  const fileData: any = {
+    incomplete: [],
+    verified: [],
+  };
+
   for (const item of progressData) {
     const languageId = item.data.languageId;
     let mappedLanguageId = languageId;
@@ -83,24 +88,28 @@ async function main() {
 
       if (translationProgress === 100) {
         if (approvalProgress === 100) {
-          await Deno.writeTextFile(
-            "verified.js",
-            "export default " +
-              JSON.stringify(mappedLanguageId, undefined, "\t")
-          );
+          fileData.verified.push(mappedLanguageId);
         } else if (approvalProgress < 100) {
-          console.log(mappedLanguageId);
+          fileData.incomplete.push(mappedLanguageId);
         }
       } else if (translationProgress < 100) {
-        await Deno.writeTextFile(
-          "incomplete.js",
-          "export default " + JSON.stringify(mappedLanguageId, undefined, "\t")
-        );
+        fileData.incomplete.push(mappedLanguageId);
       }
 
       table += `| ${languageData.emoji} | ${languageData.display} | ${item.data.translationProgress}% | ${item.data.approvalProgress}% |\n`;
     }
   }
+
+  await Promise.all([
+    Deno.writeTextFile(
+      "verified.js",
+      "export default " + JSON.stringify(fileData.verified, undefined, "\t")
+    ),
+    Deno.writeTextFile(
+      "incomplete.js",
+      "export default " + JSON.stringify(fileData.incomplete, undefined, "\t")
+    ),
+  ]);
 
   await writeToReadme(template.replace("{{TABLE}}", table));
 }
