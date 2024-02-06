@@ -71,7 +71,6 @@ async function main() {
 
   for (const item of progressData) {
     const languageId = item.data.languageId;
-    console.log(item.data);
     let mappedLanguageId = languageId;
     // Map Brazilian Portuguese (pt-BR) to Portuguese (pt)
     if (languageId === "pt-BR") {
