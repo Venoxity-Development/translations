@@ -17,6 +17,14 @@ jobs:
         with:
           deno-version: v1.x
 
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v4
+        with:
+          add: "*.js"
+          message: "chore: update automatic languages"
+        env:
+          GITHUB_TOKEN: ${{  secrets.GITHUB_TOKEN  }}
+
       - name: Update README
         run: deno run --allow-read --allow-write --allow-env --allow-net calculate.ts
         env:
