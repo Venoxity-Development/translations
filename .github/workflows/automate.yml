@@ -26,9 +26,9 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
         with:
-          add: '["*md", "*js"]'
-          committer_name: Venoxity Development
-          committer_email: contact@venoxity.dev
+          add: '[*md, *js]'
+          author_name: Venoxity Development
+          author_email: contact@venoxity.dev
           message: "chore: re-generate README"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
