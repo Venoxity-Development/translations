@@ -18,7 +18,7 @@ jobs:
           deno-version: v1.x
 
       - name: Update README
-        run: deno run --allow-read --allow-write calculate.ts
+        run: deno run --allow-read --allow-write --allow-env calculate.ts
       - name: Commit changes
         uses: EndBug/add-and-commit@v4
         with:
