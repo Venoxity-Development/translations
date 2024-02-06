@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      
+
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
@@ -25,6 +25,7 @@ jobs:
 
       - name: Commit changes
         run: |
+          git config --global user.avatar "https://i.imgur.com/StEtjMg.png"
           git config --global user.email "contact@venoxity.dev"
           git config --global user.name "Venoxity Development"
         uses: EndBug/add-and-commit@v4
