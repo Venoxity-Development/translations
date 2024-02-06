@@ -1,1 +1,1 @@
-export default "pt"
+export default [];
