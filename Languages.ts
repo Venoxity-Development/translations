@@ -6,11 +6,8 @@ export enum Language {
   FRENCH = "fr",
   GERMAN = "de",
   HUNGARIAN = "hu",
-  ITALIAN = "it",
-  SPANISH = "es",
-  SWEDISH = "sv",
+  PORTUGUESE = "pt", 
   THAI = "th",
-  TURKISH = "tr",
 }
 
 export interface LanguageEntry {
@@ -67,51 +64,33 @@ export const Languages: { [key in Language]: LanguageEntry } = {
 
   // Foreign Languages
   fr: {
-    display: "Français",
+    display: "French",
     emoji: "🇫🇷",
     i18n: "fr",
     dayjs: "fr",
   },
   de: {
-    display: "Deutsch",
+    display: "German",
     emoji: "🇩🇪",
     i18n: "de",
     dayjs: "de",
   },
   hu: {
-    display: "Magyar",
+    display: "Hungarian",
     emoji: "🇭🇺",
     i18n: "hu",
     dayjs: "hu",
   },
+  pt: {
+    display: "Portuguese",
+    emoji: "🇵🇹",
+    i18n: "pt",
+    dayjs: "pt",
+  },
   th: {
-    display: "ไทย",
+    display: "Thai",
     emoji: "🇹🇭",
     i18n: "th",
     dayjs: "th",
   },
-  es: {
-    display: "Español",
-    emoji: "🇪🇸",
-    i18n: "es",
-    dayjs: "es",
-  },
-  it: {
-    display: "Italiano",
-    emoji: "🇮🇹",
-    i18n: "it",
-    dayjs: "it",
-  },
-  sv: {
-    display: "Svenska",
-    emoji: "🇸🇪",
-    i18n: "sv",
-    dayjs: "sv",
-  },
-  tr: {
-    display: "Türkçe",
-    emoji: "🇹🇷",
-    i18n: "tr",
-    dayjs: "tr",
-  }
 };
