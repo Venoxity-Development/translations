@@ -32,5 +32,6 @@ jobs:
           committer_name: Venoxity Official Bot
           committer_email: contact@venoxity.dev
           message: "chore: re-generate README and related files"
+          avatar_url: "https://i.imgur.com/f1sHXwD.png"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
