@@ -51,7 +51,7 @@ async function writeToReadme(content: string): Promise<void> {
   }
 }
 
-import { Language, Languages } from "./Languages.ts";
+import { Languages } from "./Languages.ts";
 
 async function main() {
   const template = await readReadmeTemplate();
