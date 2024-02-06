@@ -24,8 +24,6 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --global user.email "contact@venoxity.dev"
-          git config --global user.name "Venoxity Development"
           git add verified.js incomplete.js README.md
           git commit -m "Update verified.js and incomplete.js"
           git push
