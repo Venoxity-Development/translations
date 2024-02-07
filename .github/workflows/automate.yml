@@ -19,7 +19,7 @@ jobs:
           deno-version: v1.x
 
       - name: Update README and related files
-        run: deno run --allow-read --allow-write --allow-env --allow-net --allow-run calculate.ts
+        run: deno run --allow-read --allow-write --allow-env --allow-net calculate.ts
         env:
           API_KEY: ${{ secrets.API_KEY }}
 
