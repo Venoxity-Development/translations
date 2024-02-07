@@ -3,6 +3,7 @@ name: Automate Repository
 on:
   schedule:
     - cron: "0 * * * *" # Run every hour
+  workflow_dispatch:
 
 jobs:
   auto:
