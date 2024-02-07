@@ -64,38 +64,33 @@ export const Languages: { [key in Language]: LanguageEntry } = {
 
   // Foreign Languages
   fr: {
-  display: "French",
-  emoji: "🇫🇷",
-  i18n: "fr",
-  dayjs: "fr",
-  incomplete: true
-},
+    display: "French",
+    emoji: "🇫🇷",
+    i18n: "fr",
+    dayjs: "fr",
+  },
   de: {
-  display: "German",
-  emoji: "🇩🇪",
-  i18n: "de",
-  dayjs: "de",
-  verified: true
-},
+    display: "German",
+    emoji: "🇩🇪",
+    i18n: "de",
+    dayjs: "de",
+  },
   hu: {
-  display: "Hungarian",
-  emoji: "🇭🇺",
-  i18n: "hu",
-  dayjs: "hu",
-  incomplete: true
-},
+    display: "Hungarian",
+    emoji: "🇭🇺",
+    i18n: "hu",
+    dayjs: "hu",
+  },
   pt: {
-  display: "Portuguese",
-  emoji: "🇵🇹",
-  i18n: "pt",
-  dayjs: "pt",
-  incomplete: true
-},
+    display: "Portuguese",
+    emoji: "🇵🇹",
+    i18n: "pt",
+    dayjs: "pt",
+  },
   th: {
-  display: "Thai",
-  emoji: "🇹🇭",
-  i18n: "th",
-  dayjs: "th",
-  verified: true
-},
+    display: "Thai",
+    emoji: "🇹🇭",
+    i18n: "th",
+    dayjs: "th",
+  },
 };

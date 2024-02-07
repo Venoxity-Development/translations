@@ -8,11 +8,4 @@ The following table shows a list of languages.
 
 Please note that this table **only includes languages that are currently available in the app**.
 
-|   | Language | Translation Progress | Approval Progress |
-|:-:|---|---|---|
-| 🇩🇪 | German | 100% | 100% |
-| 🇫🇷 | French | 100% | 21% |
-| 🇭🇺 | Hungarian | 100% | 52% |
-| 🇵🇹 | Portuguese | 0% | 0% |
-| 🇹🇭 | Thai | 100% | 100% |
-
+{{TABLE}}
