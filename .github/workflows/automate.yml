@@ -36,4 +36,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Format Languages.ts
-        run: deno fmt Languages.ts
+        run: |
+          deno fmt Languages.ts
+          const formattedContent = await Deno.readTextFile("./Languages.ts");
+          await Deno.writeTextFile("./Languages.ts", formattedContent)
+
+      - name: Commit formatted Languages.ts
+        uses: EndBug/add-and-commit@v4
+        with:
+          add: "Languages.ts"
+          author_name: Venoxity Official Bot
+          author_email: contact@venoxity.dev
+          committer_name: Venoxity Official Bot
+          committer_email: contact@venoxity.dev
+          message: "chore: format Languages.ts"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
