@@ -24,12 +24,16 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
 
       - name: Commit changes
-        run: |
-          git config --global user.name "Venoxity Official Bot"
-          git config --global user.email "contact@venoxity.dev"
-          git add "*.md *.js *.ts"
-          git commit -m "chore: re-generate README and related files" || true
-          git push || true
+        uses: EndBug/add-and-commit@v4
+        with:
+          add: "*.md *.js *.ts"
+          author_name: Venoxity Official Bot
+          author_email: contact@venoxity.dev
+          committer_name: Venoxity Official Bot
+          committer_email: contact@venoxity.dev
+          message: "chore: re-generate README and related files"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Format Languages.ts
         run: |
@@ -38,7 +42,13 @@ jobs:
           await Deno.writeTextFile("Languages.ts", formattedContent)
 
       - name: Commit formatted Languages.ts
-        run: |
-          git add Languages.ts
-          git commit -m "chore: format Languages.ts" || true
-          git push || true
+        uses: EndBug/add-and-commit@v4
+        with:
+          add: "Languages.ts"
+          author_name: Venoxity Official Bot
+          author_email: contact@venoxity.dev
+          committer_name: Venoxity Official Bot
+          committer_email: contact@venoxity.dev
+          message: "chore: format Languages.ts"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
