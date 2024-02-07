@@ -1,4 +1,1 @@
-export default [
-	"de",
-	"th"
-]
+export default [];
