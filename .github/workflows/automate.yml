@@ -18,37 +18,18 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: Update README, and related files
+      - name: Update README and related files
         run: deno run --allow-read --allow-write --allow-env --allow-net --allow-run calculate.ts
         env:
           API_KEY: ${{ secrets.API_KEY }}
 
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v4
-        with:
-          add: "*.md *.js *.ts"
-          author_name: Venoxity Official Bot
-          author_email: contact@venoxity.dev
-          committer_name: Venoxity Official Bot
-          committer_email: contact@venoxity.dev
-          message: "chore: re-generate README and related files"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Format Languages.ts
-        run: |
-          deno fmt Languages.ts
-          const formattedContent = await Deno.readTextFile("Languages.ts");
-          await Deno.writeTextFile("Languages.ts", formattedContent)
+        run: deno fmt Languages.ts
 
-      - name: Commit formatted Languages.ts
-        uses: EndBug/add-and-commit@v4
-        with:
-          add: "Languages.ts"
-          author_name: Venoxity Official Bot
-          author_email: contact@venoxity.dev
-          committer_name: Venoxity Official Bot
-          committer_email: contact@venoxity.dev
-          message: "chore: format Languages.ts"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit changes
+        run: |
+          git config --global user.name "Venoxity Official Bot"
+          git config --global user.email "contact@venoxity.dev"
+          git add "*.md" "*.js" "*.ts" "Languages.ts"
+          git commit -m "chore: update files" || true
+          git push || true
