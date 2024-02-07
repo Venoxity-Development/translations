@@ -28,7 +28,6 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --global user.avatar https://i.imgur.com/FpGl7KO.png
           git config --global user.name "Venoxity Official Bot"
           git config --global user.email "contact@venoxity.dev"
           git add "*.md" "*.js" "*.ts" "Languages.ts"
