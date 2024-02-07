@@ -34,3 +34,6 @@ jobs:
           message: "chore: re-generate README and related files"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Format Languages.ts
+        run: deno fmt Languages.ts

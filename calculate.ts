@@ -132,9 +132,6 @@ async function main() {
       );
 
       await Deno.writeTextFile("./Languages.ts", updatedContent);
-      Deno.run({
-        cmd: ["deno", "fmt", "./Languages.ts"],
-      });
     }
   }
 
