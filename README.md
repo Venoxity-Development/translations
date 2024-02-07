@@ -1,6 +1,6 @@
 # Venoxity Translations
 
-This repository contains Venoxity's translation files. Feel free to help translate Venoxity to new languages or fix/improve existing translations. 
+This repository contains Venoxity's translation files. Feel free to help translate Venoxity to new languages or fix/improve existing translations.
 
 ## Languages
 
