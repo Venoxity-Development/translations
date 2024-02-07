@@ -18,7 +18,7 @@ jobs:
         with:
           deno-version: v1.x
 
-     - name: Small Language Patch
+      - name: Small Language Patch
         run: deno run --allow-read --allow-write Languages.patch.ts
 
       - name: Update README and related files
