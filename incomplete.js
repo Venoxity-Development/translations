@@ -1,5 +1,1 @@
-export default [
-	"fr",
-	"hu",
-	"pt"
-]
+export default [];
