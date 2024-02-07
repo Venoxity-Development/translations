@@ -38,8 +38,8 @@ jobs:
       - name: Format Languages.ts
         run: |
           deno fmt Languages.ts
-          const formattedContent = await Deno.readTextFile("./Languages.ts");
-          await Deno.writeTextFile("./Languages.ts", formattedContent)
+          const formattedContent = await Deno.readTextFile("Languages.ts");
+          await Deno.writeTextFile("Languages.ts", formattedContent)
 
       - name: Commit formatted Languages.ts
         uses: EndBug/add-and-commit@v4
