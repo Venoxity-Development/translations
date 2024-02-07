@@ -1,4 +1,4 @@
-// deno run --allow-read --allow-write --allow-env --allow-net calculate.ts
+// deno run --allow-read --allow-write --allow-env --allow-net --allow-run calculate.ts
 
 async function fetchProgress(): Promise<any> {
   const projectId = "645542";
@@ -45,13 +45,12 @@ async function readReadmeTemplate(): Promise<string> {
 async function writeToReadme(content: string): Promise<void> {
   try {
     await Deno.writeTextFile("README.md", content);
-    console.log("README.md updated successfully.");
   } catch (error) {
     console.error("Error writing to README.md:", error);
   }
 }
 
-import { Languages } from "./Languages.ts";
+import { Language, LanguageEntry, Languages } from "./Languages.ts";
 
 async function main() {
   const template = await readReadmeTemplate();
@@ -76,31 +75,66 @@ async function main() {
   for (const item of progressData) {
     const languageId = item.data.languageId;
     let mappedLanguageId = languageId;
+
     // Map Brazilian Portuguese (pt-BR) to Portuguese (pt)
     if (languageId === "pt-BR") {
       mappedLanguageId = "pt";
     }
 
     if (Languages[mappedLanguageId]) {
-      const languageData = Languages[mappedLanguageId];
       const translationProgress = item.data.translationProgress;
       const approvalProgress = item.data.approvalProgress;
 
       if (translationProgress === 100) {
         if (approvalProgress === 100) {
           fileData.verified.push(mappedLanguageId);
-          const entry = Languages[mappedLanguageId as keyof typeof Languages];
-          if (entry) {
-            entry.verified = true;
-        }    
+          await updateLanguagesEntry(mappedLanguageId, { verified: true });
         } else if (approvalProgress < 100) {
           fileData.incomplete.push(mappedLanguageId);
+          await updateLanguagesEntry(mappedLanguageId, { incomplete: true });
         }
       } else if (translationProgress < 100) {
         fileData.incomplete.push(mappedLanguageId);
+        await updateLanguagesEntry(mappedLanguageId, { incomplete: true });
       }
 
+      const languageData = Languages[mappedLanguageId];
       table += `| ${languageData.emoji} | ${languageData.display} | ${item.data.translationProgress}% | ${item.data.approvalProgress}% |\n`;
+    }
+  }
+
+  async function updateLanguagesEntry(
+    languageId: Language,
+    updates: Partial<LanguageEntry>
+  ) {
+    const originalContent = await Deno.readTextFile("languages.ts");
+
+    const objectRegex = new RegExp(`${languageId}:\\s*{[^}]+}`, "g");
+    const match = originalContent.match(objectRegex);
+
+    if (match) {
+      const objectString = match[0];
+      const updatedObjectString = objectString.replace(
+        /{([^}]+)}/,
+        (_, content) => {
+          const currentObject: LanguageEntry = eval(`({${content}})`); // Unsafe, but fine for this purpose
+          const updatedObject: LanguageEntry = { ...currentObject, ...updates };
+
+          const updatedProperties = Object.entries(updatedObject)
+            .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
+            .join(",\n");
+          return `{\n${updatedProperties}\n}`;
+        }
+      );
+      const updatedContent = originalContent.replace(
+        objectRegex,
+        updatedObjectString
+      );
+
+      await Deno.writeTextFile("languages.ts", updatedContent);
+      Deno.run({
+        cmd: ["deno", "fmt", "languages.ts"],
+      });
     }
   }
 
