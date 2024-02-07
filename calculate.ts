@@ -107,7 +107,7 @@ async function main() {
     languageId: Language,
     updates: Partial<LanguageEntry>
   ) {
-    const originalContent = await Deno.readTextFile("languages.ts");
+    const originalContent = await Deno.readTextFile("./Languages.ts");
 
     const objectRegex = new RegExp(`${languageId}:\\s*{[^}]+}`, "g");
     const match = originalContent.match(objectRegex);
@@ -131,9 +131,9 @@ async function main() {
         updatedObjectString
       );
 
-      await Deno.writeTextFile("languages.ts", updatedContent);
+      await Deno.writeTextFile("./Languages.ts", updatedContent);
       Deno.run({
-        cmd: ["deno", "fmt", "languages.ts"],
+        cmd: ["deno", "fmt", "./Languages.ts"],
       });
     }
   }
