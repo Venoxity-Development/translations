@@ -84,6 +84,7 @@ export const Languages: { [key in Language]: LanguageEntry } = {
     i18n: "hu",
     dayjs: "hu",
     incomplete: true,
+    verified: true,
   },
   pt: {
     display: "Portuguese",
