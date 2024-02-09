@@ -77,6 +77,7 @@ export const Languages: { [key in Language]: LanguageEntry } = {
     i18n: "de",
     dayjs: "de",
     verified: true,
+    incomplete: true,
   },
   hu: {
     display: "Hungarian",
@@ -100,5 +101,6 @@ export const Languages: { [key in Language]: LanguageEntry } = {
     i18n: "th",
     dayjs: "th",
     verified: true,
+    incomplete: true,
   },
 };

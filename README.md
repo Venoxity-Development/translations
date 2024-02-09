@@ -10,9 +10,9 @@ Please note that this table **only includes languages that are currently availab
 
 |   | Language | Translation Progress | Approval Progress |
 |:-:|---|---|---|
-| 🇩🇪 | German | 100% | 100% |
-| 🇫🇷 | French | 100% | 21% |
-| 🇭🇺 | Hungarian | 100% | 100% |
-| 🇵🇹 | Portuguese | 100% | 100% |
-| 🇹🇭 | Thai | 100% | 100% |
+| 🇩🇪 | German | 90% | 90% |
+| 🇫🇷 | French | 90% | 19% |
+| 🇭🇺 | Hungarian | 90% | 90% |
+| 🇵🇹 | Portuguese | 90% | 90% |
+| 🇹🇭 | Thai | 90% | 90% |
 
