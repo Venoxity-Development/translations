@@ -1,4 +1,3 @@
 export default [
-	"fr",
-	"pt"
+	"fr"
 ]
