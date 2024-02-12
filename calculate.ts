@@ -116,11 +116,20 @@ async function main() {
       const objectString = match[0];
       const currentObject: LanguageEntry = eval(`({${objectString.match(/{([^}]+)}/)?.[1]}})`); // Unsafe, but fine for this purpose
   
-      // Remove the opposite status if present
+      // Determine the status to update and remove the opposite status
+      let statusToUpdate: keyof LanguageEntry | undefined;
+      let oppositeStatus: keyof LanguageEntry = 'verified'; // Initialize oppositeStatus
+  
       if ('verified' in updates && updates.verified) {
-        delete updates.incomplete;
+        statusToUpdate = 'verified';
+        oppositeStatus = 'incomplete';
       } else if ('incomplete' in updates && updates.incomplete) {
-        delete updates.verified;
+        statusToUpdate = 'incomplete';
+        oppositeStatus = 'verified';
+      }
+  
+      if (statusToUpdate !== undefined) {
+        delete updates[oppositeStatus];
       }
   
       const updatedObject: LanguageEntry = { ...currentObject, ...updates };
@@ -138,7 +147,7 @@ async function main() {
       await Deno.writeTextFile("./Languages.ts", updatedContent);
     }
   }
-
+    
   await Promise.all([
     Deno.writeTextFile(
       "verified.js",
