@@ -108,29 +108,33 @@ async function main() {
     updates: Partial<LanguageEntry>
   ) {
     const originalContent = await Deno.readTextFile("./Languages.ts");
-
+  
     const objectRegex = new RegExp(`${languageId}:\\s*{[^}]+}`, "g");
     const match = originalContent.match(objectRegex);
-
+  
     if (match) {
       const objectString = match[0];
-      const updatedObjectString = objectString.replace(
-        /{([^}]+)}/,
-        (_, content) => {
-          const currentObject: LanguageEntry = eval(`({${content}})`); // Unsafe, but fine for this purpose
-          const updatedObject: LanguageEntry = { ...currentObject, ...updates };
-
-          const updatedProperties = Object.entries(updatedObject)
-            .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
-            .join(",\n");
-          return `{\n${updatedProperties}\n}`;
-        }
-      );
+      const currentObject: LanguageEntry = eval(`({${objectString.match(/{([^}]+)}/)?.[1]}})`); // Unsafe, but fine for this purpose
+  
+      // Remove the opposite status if present
+      if ('verified' in updates && updates.verified) {
+        delete updates.incomplete;
+      } else if ('incomplete' in updates && updates.incomplete) {
+        delete updates.verified;
+      }
+  
+      const updatedObject: LanguageEntry = { ...currentObject, ...updates };
+      const updatedProperties = Object.entries(updatedObject)
+        .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
+        .join(",\n");
+  
+      const updatedObjectString = `{\n${updatedProperties}\n}`;
+  
       const updatedContent = originalContent.replace(
         objectRegex,
         updatedObjectString
       );
-
+  
       await Deno.writeTextFile("./Languages.ts", updatedContent);
     }
   }
