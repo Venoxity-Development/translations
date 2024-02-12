@@ -76,15 +76,13 @@ export const Languages: { [key in Language]: LanguageEntry } = {
   emoji: "🇩🇪",
   i18n: "de",
   dayjs: "de",
-  verified: true,
-  incomplete: true
+  verified: true
 },
   {
   display: "Hungarian",
   emoji: "🇭🇺",
   i18n: "hu",
   dayjs: "hu",
-  incomplete: true,
   verified: true
 },
   {
@@ -92,15 +90,13 @@ export const Languages: { [key in Language]: LanguageEntry } = {
   emoji: "🇵🇹",
   i18n: "pt",
   dayjs: "pt",
-  incomplete: true,
-  verified: true
+  incomplete: true
 },
   {
   display: "Thai",
   emoji: "🇹🇭",
   i18n: "th",
   dayjs: "th",
-  verified: true,
   incomplete: true
 },
 };
