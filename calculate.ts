@@ -108,46 +108,33 @@ async function main() {
     updates: Partial<LanguageEntry>
   ) {
     const originalContent = await Deno.readTextFile("./Languages.ts");
-  
+
     const objectRegex = new RegExp(`${languageId}:\\s*{[^}]+}`, "g");
     const match = originalContent.match(objectRegex);
-  
+
     if (match) {
       const objectString = match[0];
-      const currentObject: LanguageEntry = eval(`({${objectString.match(/{([^}]+)}/)?.[1]}})`); // Unsafe, but fine for this purpose
-  
-      // Determine the status to update and remove the opposite status
-      let statusToUpdate: keyof LanguageEntry | undefined;
-      let oppositeStatus: keyof LanguageEntry = 'verified'; // Initialize oppositeStatus
-  
-      if ('verified' in updates && updates.verified) {
-        statusToUpdate = 'verified';
-        oppositeStatus = 'incomplete';
-      } else if ('incomplete' in updates && updates.incomplete) {
-        statusToUpdate = 'incomplete';
-        oppositeStatus = 'verified';
-      }
-  
-      if (statusToUpdate !== undefined) {
-        delete updates[oppositeStatus];
-      }
-  
-      const updatedObject: LanguageEntry = { ...currentObject, ...updates };
-      const updatedProperties = Object.entries(updatedObject)
-        .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
-        .join(",\n");
-  
-      const updatedObjectString = `{\n${updatedProperties}\n}`;
-  
+      const updatedObjectString = objectString.replace(
+        /{([^}]+)}/,
+        (_, content) => {
+          const currentObject: LanguageEntry = eval(`({${content}})`); // Unsafe, but fine for this purpose
+          const updatedObject: LanguageEntry = { ...currentObject, ...updates };
+
+          const updatedProperties = Object.entries(updatedObject)
+            .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
+            .join(",\n");
+          return `{\n${updatedProperties}\n}`;
+        }
+      );
       const updatedContent = originalContent.replace(
         objectRegex,
         updatedObjectString
       );
-  
+
       await Deno.writeTextFile("./Languages.ts", updatedContent);
     }
   }
-    
+
   await Promise.all([
     Deno.writeTextFile(
       "verified.js",
