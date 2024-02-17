@@ -70,6 +70,7 @@ export const Languages: { [key in Language]: LanguageEntry } = {
     i18n: "fr",
     dayjs: "fr",
     incomplete: true,
+    verified: true,
   },
   de: {
     display: "German",
