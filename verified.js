@@ -1,5 +1,6 @@
 export default [
 	"de",
 	"fr",
-	"hu"
+	"hu",
+	"pt"
 ]

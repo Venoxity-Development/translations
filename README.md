@@ -13,6 +13,6 @@ Please note that this table **only includes languages that are currently availab
 | 🇩🇪 | German | 100% | 100% |
 | 🇫🇷 | French | 100% | 100% |
 | 🇭🇺 | Hungarian | 100% | 100% |
-| 🇵🇹 | Portuguese | 87% | 87% |
+| 🇵🇹 | Portuguese | 100% | 100% |
 | 🇹🇭 | Thai | 100% | 87% |
 
