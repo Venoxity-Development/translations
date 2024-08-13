@@ -82,9 +82,9 @@ async function main() {
     }
 
     // Map European Spanish (es-ES) to Spanish (es)
-    // if (languageId === "es-ES") {
-    //   mappedLanguageId = "es";
-    // }
+    if (languageId === "es-ES") {
+      mappedLanguageId = "es";
+    }
 
     if (Languages[mappedLanguageId]) {
       const translationProgress = item.data.translationProgress;
@@ -108,37 +108,31 @@ async function main() {
     }
   }
 
-  async function updateLanguagesEntry(
-    languageId: Language,
-    updates: Partial<LanguageEntry>
-  ) {
+  async function updateLanguagesEntry(languageId: Language, updates: Partial<LanguageEntry>) {
     const originalContent = await Deno.readTextFile("./Languages.ts");
-
+  
     const objectRegex = new RegExp(`${languageId}:\\s*{[^}]+}`, "g");
     const match = originalContent.match(objectRegex);
-
+  
     if (match) {
       const objectString = match[0];
-      const updatedObjectString = objectString.replace(
-        /{([^}]+)}/,
-        (_, content) => {
-          const currentObject: LanguageEntry = eval(`({${content}})`); // Unsafe, but fine for this purpose
-          const updatedObject: LanguageEntry = { ...currentObject, ...updates };
-
-          const updatedProperties = Object.entries(updatedObject)
-            .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
-            .join(",\n");
-          return `{\n${updatedProperties}\n}`;
-        }
-      );
-      const updatedContent = originalContent.replace(
-        objectRegex,
-        updatedObjectString
-      );
-
+  
+      // Instead of eval, use JSON.parse or similar
+      const updatedObjectString = objectString.replace(/{([^}]+)}/, (_, content) => {
+        const currentObject = JSON.parse(`{${content}}`);
+        const updatedObject = { ...currentObject, ...updates };
+  
+        const updatedProperties = Object.entries(updatedObject)
+          .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
+          .join(",\n");
+        return `{\n${updatedProperties}\n}`;
+      });
+  
+      const updatedContent = originalContent.replace(objectRegex, updatedObjectString);
+  
       await Deno.writeTextFile("./Languages.ts", updatedContent);
     }
-  }
+  }  
 
   await Promise.all([
     Deno.writeTextFile(
