@@ -3,6 +3,7 @@ export enum Language {
   ENGLISH = "en",
 
   // Foreign Languages
+  ARABIC = "ar",    
   FRENCH = "fr",
   GERMAN = "de",
   HUNGARIAN = "hu",
@@ -64,6 +65,14 @@ export const Languages: { [key in Language]: LanguageEntry } = {
   },
 
   // Foreign Languages
+  ar: { 
+    display: "Arabic", 
+    emoji: "🇸🇦", 
+    i18n: "ar", 
+    dayjs: "ar", 
+    incomplete: true,
+    verified: true
+ },
   fr: {
     display: "French",
     emoji: "🇫🇷",
