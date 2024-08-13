@@ -78,10 +78,10 @@ export const Languages: { [key in Language]: LanguageEntry } = {
     display: "Spanish", 
     emoji: "🇪🇸", 
     i18n: "es",
-    dayjs: "fr",
+    dayjs: "es",
     incomplete: true,
     verified: true,
-},
+  },
   fr: {
     display: "French",
     emoji: "🇫🇷",
