@@ -126,7 +126,7 @@ async function main() {
           const updatedObject: LanguageEntry = { ...currentObject, ...updates };
 
           const updatedProperties = Object.entries(updatedObject)
-            .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
+            .map(([k, value]) => `  ${k}: ${JSON.stringify(value)}`)
             .join(",\n");
           return `{\n${updatedProperties}\n}`;
         }
