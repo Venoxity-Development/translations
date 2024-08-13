@@ -131,6 +131,9 @@ async function main() {
         /{([^}]+)}/,
         (_, content) => {
           const currentObject: LanguageEntry = eval(`({${content}})`); // Unsafe, but fine for this purpose
+          console.log(`Language ID: ${languageId}`); // Log the language ID
+          console.log("Current Object:", currentObject); // Log the current object
+
           const updatedObject: LanguageEntry = { ...currentObject, ...updates };
 
           const updatedProperties = Object.entries(updatedObject)
