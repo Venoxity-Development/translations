@@ -1,6 +1,6 @@
 {
-  "navbar.faq": "FAQ",
-  "navbar.btnLogin": "Login",
-  "navbar.btnServers": "Servers",
-  "navbar.btnDashboard": "Dashboard"
+  "navbar.faq": "Preguntas Más Frecuentes",
+  "navbar.btnLogin": "Acceso",
+  "navbar.btnServers": "Servidores",
+  "navbar.btnDashboard": "Panel De Control"
 }
