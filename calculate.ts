@@ -81,6 +81,11 @@ async function main() {
       mappedLanguageId = "pt";
     }
 
+    // Map European Spanish (es-ES) to Spanish (es)
+    if (languageId === "es-ES") {
+      mappedLanguageId = "es";
+    }
+
     if (Languages[mappedLanguageId]) {
       const translationProgress = item.data.translationProgress;
       const approvalProgress = item.data.approvalProgress;
