@@ -9,7 +9,7 @@ export enum Language {
   GERMAN = "de",
   HUNGARIAN = "hu",
   PORTUGUESE = "pt",
-  THAI = "th",
+  THAI = "th"
 }
 
 export interface LanguageEntry {
