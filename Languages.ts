@@ -4,7 +4,7 @@ export enum Language {
 
   // Foreign Languages
   ARABIC = "ar",
-  SPANISH = "es",
+  SPANISH = "es-ES",
   FRENCH = "fr",
   GERMAN = "de",
   HUNGARIAN = "hu",
@@ -74,8 +74,8 @@ export const Languages: { [key in Language]: LanguageEntry } = {
     incomplete: true,
     verified: true,
   },
-  es: {
-    display: "Español",
+  "es-ES": {
+    display: "Spanish",
     emoji: "🇪🇸",
     i18n: "es",
     dayjs: "es",
