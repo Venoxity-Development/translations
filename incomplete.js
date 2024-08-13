@@ -1,4 +1,1 @@
-export default [
-	"ar",
-	"th"
-]
+export default []
