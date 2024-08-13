@@ -78,18 +78,9 @@ async function main() {
 
     console.log("Language ID: " + languageId);
 
-    // Map European Spanish (es-ES) to Spanish (es)
-    // if (languageId === "es-ES") {
-    //   mappedLanguageId = "es";
-    // }
-
     // Map Brazilian Portuguese (pt-BR) to Portuguese (pt)
     if (languageId === "pt-BR") {
       mappedLanguageId = "pt";
-    }
-
-    if (languageId === "es-ES") {
-      mappedLanguageId = "es";
     }
 
     console.log("Mapped Language ID: " + mappedLanguageId);
