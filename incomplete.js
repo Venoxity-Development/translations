@@ -1,4 +1,5 @@
 export default [
 	"ar",
-	"th"
+	"th",
+	"es"
 ]
