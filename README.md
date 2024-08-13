@@ -12,6 +12,7 @@ Please note that this table **only includes languages that are currently availab
 |:-:|---|---|---|
 | 🇸🇦 | Arabic | 100% | 0% |
 | 🇩🇪 | German | 100% | 100% |
+| 🇪🇸 | Spanish | 47% | 47% |
 | 🇫🇷 | French | 100% | 100% |
 | 🇭🇺 | Hungarian | 100% | 100% |
 | 🇵🇹 | Portuguese | 100% | 100% |
