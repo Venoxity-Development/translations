@@ -1,5 +1,1 @@
-export default [
-	"ar",
-	"th",
-	"es"
-]
+export default []
