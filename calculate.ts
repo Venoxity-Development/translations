@@ -82,9 +82,9 @@ async function main() {
     }
 
     // Map European Spanish (es-ES) to Spanish (es)
-    if (languageId === "es-ES") {
-      mappedLanguageId = "es";
-    }
+    // if (languageId === "es-ES") {
+    //   mappedLanguageId = "es";
+    // }
 
     if (Languages[mappedLanguageId]) {
       const translationProgress = item.data.translationProgress;
@@ -126,7 +126,7 @@ async function main() {
           const updatedObject: LanguageEntry = { ...currentObject, ...updates };
 
           const updatedProperties = Object.entries(updatedObject)
-            .map(([k, value]) => `  ${k}: ${JSON.stringify(value)}`)
+            .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
             .join(",\n");
           return `{\n${updatedProperties}\n}`;
         }
