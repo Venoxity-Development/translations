@@ -117,16 +117,19 @@ async function main() {
     if (match) {
       const objectString = match[0];
   
-      // Instead of eval, use JSON.parse or similar
-      const updatedObjectString = objectString.replace(/{([^}]+)}/, (_, content) => {
-        const currentObject = JSON.parse(`{${content}}`);
-        const updatedObject = { ...currentObject, ...updates };
+      // Convert the matched object string into a valid JavaScript object
+      const currentObject = new Function(`return ${objectString};`)();
+      
+      const updatedObject = { ...currentObject, ...updates };
   
-        const updatedProperties = Object.entries(updatedObject)
-          .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
-          .join(",\n");
-        return `{\n${updatedProperties}\n}`;
-      });
+      const updatedProperties = Object.entries(updatedObject)
+        .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
+        .join(",\n");
+      
+      const updatedObjectString = objectString.replace(
+        /{([^}]+)}/,
+        `{\n${updatedProperties}\n}`
+      );
   
       const updatedContent = originalContent.replace(objectRegex, updatedObjectString);
   
