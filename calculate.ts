@@ -76,15 +76,17 @@ async function main() {
     const languageId = item.data.languageId;
     let mappedLanguageId = languageId;
 
+    console.log(languageId);
+    
     // Map European Spanish (es-ES) to Spanish (es)
-    if (languageId === "es-ES") {
-      mappedLanguageId = "es";
-    }
+    // if (languageId === "es-ES") {
+    //   mappedLanguageId = "es";
+    // }
 
     // Map Brazilian Portuguese (pt-BR) to Portuguese (pt)
-    // if (languageId === "pt-BR") {
-    //   mappedLanguageId = "pt";
-    // }
+    if (languageId === "pt-BR") {
+       mappedLanguageId = "pt";
+     }
 
     if (Languages[mappedLanguageId]) {
       const translationProgress = item.data.translationProgress;
