@@ -87,12 +87,6 @@ async function main() {
       mappedLanguageId = "pt";
     }
 
-    const languageEntry = Languages[mappedLanguageId];
-    if (!languageEntry) {
-      console.warn(`Language not found: ${mappedLanguageId}`);
-      continue;
-    }
-
     if (Languages[mappedLanguageId]) {
       const translationProgress = item.data.translationProgress;
       const approvalProgress = item.data.approvalProgress;
@@ -126,13 +120,11 @@ async function main() {
 
     if (match) {
       const objectString = match[0];
-
-      // Instead of eval, use JSON.parse or similar
       const updatedObjectString = objectString.replace(
         /{([^}]+)}/,
         (_, content) => {
-          const currentObject = JSON.parse(`{${content}}`);
-          const updatedObject = { ...currentObject, ...updates };
+          const currentObject: LanguageEntry = eval(`({${content}})`); // Unsafe, but fine for this purpose
+          const updatedObject: LanguageEntry = { ...currentObject, ...updates };
 
           const updatedProperties = Object.entries(updatedObject)
             .map(([key, value]) => `  ${key}: ${JSON.stringify(value)}`)
@@ -140,7 +132,6 @@ async function main() {
           return `{\n${updatedProperties}\n}`;
         }
       );
-
       const updatedContent = originalContent.replace(
         objectRegex,
         updatedObjectString
