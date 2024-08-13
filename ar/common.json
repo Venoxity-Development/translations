@@ -6,16 +6,16 @@
       "news": "أخبار",
       "contact": "اتصل بنا",
       "back": "رجوع",
-      "copyright": "© Copyright 2024 Venoxity. All rights reserved.",
-      "privacy": "Privacy Policy",
-      "terms": "Terms Of Use",
-      "documentation": "Documentation",
-      "support": "Support",
-      "workInProgress": "Work in progress",
-      "goToMainPage": "Go to main page",
-      "pageNotFound": "Page not found",
-      "motto": "Vigilance Unleashed, Where the Hawk's Gaze Never Wavers",
-      "readAboutUs": "Read about us"
+      "copyright": "© حقوق الطبع والنشر 2024 Venoxity. جميع الحقوق محفوظة.",
+      "privacy": "سياسة الخصوصية",
+      "terms": "شروط الاستخدام",
+      "documentation": "توثيق",
+      "support": "دعم",
+      "workInProgress": "العمل قيد التقدم",
+      "goToMainPage": "اذهب إلى الصفحة الرئيسية",
+      "pageNotFound": "لم يتم العثور على الصفحة",
+      "motto": "اليقظة المطلقة، حيث لا يتزعزع نظر الصقر",
+      "readAboutUs": "اقرأ عنا"
     }
   }
 }
