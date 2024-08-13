@@ -4,6 +4,7 @@ export enum Language {
 
   // Foreign Languages
   ARABIC = "ar",
+  SPANISH = "es",
   FRENCH = "fr",
   GERMAN = "de",
   HUNGARIAN = "hu",
