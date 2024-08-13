@@ -1,20 +1,21 @@
-“common”:{
-   “text”:{
-   “home”: “Casa” ,
-   “about us”: “Sobre Nosotros” ,
-   “news”: “Noticias” ,
-   “contact”: “Contacto” ,
-   “back”: “Volver” ,
-    “copyright”: “©️Copyright 2024 Venoxity. Todos Los Derechos Reservados” , 
-    “privacy”: “Política Privada” ,
-    “terms”: “Términos De Uso” ,
-     “documentation”: “Documentación” ,
-      “support”: “Apoyo” , 
-      “workInProgress”: “Trabajo En Curso” , 
-      “goToMainPage”: “Ir A La Página Principal” ,
-      “pageNotFound”: “Página No Encontrada” , 
-       “motto”: “La Vigilancia Se Desata Donde La Mirada Del Halcón Nunca Duda” ,
-       “readAboutUs”: “Leer Sobre Nosotros” ,
-       }
-     }
+{
+  "common": {
+    "text": {
+      "home": "Casa",
+      "about us": "Sobre Nosotros",
+      "news": "Noticias",
+      "contact": "Contacto",
+      "back": "Volver",
+      "copyright": "©️Copyright 2024 Venoxity. Todos Los Derechos Reservados",
+      "privacy": "Política Privada",
+      "terms": "Términos De Uso",
+      "documentation": "Documentación",
+      "support": "Apoyo",
+      "workInProgress": "Trabajo En Curso",
+      "goToMainPage": "Ir A La Página Principal",
+      "pageNotFound": "Página No Encontrada",
+      "motto": "La Vigilancia Se Desata Donde La Mirada Del Halcón Nunca Duda",
+      "readAboutUs": "Leer Sobre Nosotros"
     }
+  }
+}
