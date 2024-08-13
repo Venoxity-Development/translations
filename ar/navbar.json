@@ -1,6 +1,6 @@
 {
-  "navbar.faq": "FAQ",
-  "navbar.btnLogin": "Login",
-  "navbar.btnServers": "Servers",
-  "navbar.btnDashboard": "Dashboard"
+  "navbar.faq": "الأسئلة المتكررة",
+  "navbar.btnLogin": "تسجيل الدخول",
+  "navbar.btnServers": "الخوادم",
+  "navbar.btnDashboard": "لوحة القيادة"
 }
